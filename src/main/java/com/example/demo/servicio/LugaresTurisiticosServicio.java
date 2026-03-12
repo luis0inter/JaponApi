@@ -18,6 +18,12 @@ public List<LugaresTurisiticos> getLugaresTuristicos(){
     return lugaresTurisiticosRepositorio.getLugaresTuristicos();
 }
 
+public LugaresTurisiticos guardarLugarTuristico(LugaresTurisiticos lugarTurisitico){
+    return lugaresTurisiticosRepositorio.guardarLugarTuristico(lugarTurisitico);
+}
+
+
+
 
 
 
