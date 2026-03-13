@@ -24,14 +24,23 @@ public LugaresTurisiticosControlador(LugaresTurisiticosServicio lugaresTurisitic
 this.lugaresTurisiticosServicio = lugaresTurisiticosServicio;
 }
 
-@GetMapping public ResponseEntity<List<LugaresTurisiticos>> getLugaresTuristicos(){
+@GetMapping public ResponseEntity<List<LugaresTurisiticos>> getLugaresTuristicos(){ //METODO GET para devolver todos los lugares
 return ResponseEntity.ok(lugaresTurisiticosServicio.getLugaresTuristicos());
 }
 
-@PostMapping public ResponseEntity<LugaresTurisiticos> guardarLugarTursitico(@RequestBody LugaresTurisiticos lugarTurisitico){
+@PostMapping public ResponseEntity<LugaresTurisiticos> guardarLugarTursitico(@RequestBody LugaresTurisiticos lugarTurisitico){ //METODO POST para guardar un lugar nuevo
     log.info("Guardando lugar turístico como: " + lugarTurisitico.getNombre());
     return new ResponseEntity<>( lugaresTurisiticosServicio.guardarLugarTuristico(lugarTurisitico), HttpStatus.CREATED);
 }
+
+@GetMapping ("/{lugarTuristicoId}")public ResponseEntity<LugaresTurisiticos> obtenerLugarTuristico(@PathVariable int lugarTuristicoId){ //METODO GET para devolver un lugar específico
+return new ResponseEntity<>(lugaresTurisiticosServicio.get(lugarTuristicoId),HttpStatus.OK);
+}
+
+@GetMapping("/{lugarTuristicoId}/actividades") public ResponseEntity<List<String>> getActividades(@PathVariable int lugarTuristicoId){
+    return ResponseEntity.ok(lugaresTurisiticosServicio.getActividades(lugarTuristicoId),HttpStatus.OK);
+}
+
 
 
 }

@@ -10,9 +10,19 @@ import java.util.List;
 @Service
 public class LugaresTurisiticosRepositorio {
     private List<LugaresTurisiticos> lugaresTuristicos = new ArrayList<>();
-private static int id = 1;
+    private static int id = 1;
 
     public List<LugaresTurisiticos> getLugaresTuristicos() {
         return lugaresTuristicos;
+    }
+
+    public LugaresTurisiticos guardarLugarTuristico(LugaresTurisiticos lugarTurisitico){
+        lugarTurisitico.setId(id++);
+        lugaresTuristicos.add(lugarTurisitico);
+        return lugarTurisitico;
+    }
+
+    public LugaresTurisiticos buscarLugarTuristico(int lugarTurisiticoId){
+        return lugaresTuristicos.get(lugarTurisiticoId);
     }
 }

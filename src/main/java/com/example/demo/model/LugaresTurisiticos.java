@@ -9,6 +9,7 @@ public class LugaresTurisiticos {
     private String ubicacion;
     private List<String> actividades;
     private List<String> reviews;
+    private int id;
 
     public LugaresTurisiticos (String ubicacion, List<String> actividades, List<String> reviews){
         this.ubicacion = ubicacion;
@@ -46,5 +47,13 @@ public class LugaresTurisiticos {
 
     public void setReviews(List<String> reviews) {
         this.reviews = reviews;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 }

@@ -22,6 +22,11 @@ public LugaresTurisiticos guardarLugarTuristico(LugaresTurisiticos lugarTurisiti
     return lugaresTurisiticosRepositorio.guardarLugarTuristico(lugarTurisitico);
 }
 
+public LugaresTurisiticos get(int lugarTuristicoId){
+    lugarTuristicoId--;
+    return lugaresTurisiticosRepositorio.buscarLugarTuristico(lugarTuristicoId);
+}
+
 
 
 
