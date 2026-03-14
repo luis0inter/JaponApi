@@ -17,24 +17,16 @@ public class VehiculosControlador {
         this.vehiculosServicio = vehiculosServicio;
     }
 
-    //Debería de ser con algo como esto según yo osea si es posible
-    /*    @GetMapping
-    public ResponseEntity<List<Cliente>> getClientes() {
-        return ResponseEntity.ok(clienteService.getClientes());
-        //return clienteService.getClientes(); esto es si lo hubiera puesto con ? en vez del responseEntity
-    }
-
-     */
 
     @GetMapping("/ciudad/{ciudadId}")
-    public ResponseEntity<List<Vehiculos>> getPorPrefectura(@PathVariable String ciudadId) { //Checar lo de PathVariable q no se q es
+    public ResponseEntity<List<Vehiculos>> getPorPrefectura(@PathVariable String ciudadId) { //PathVariable conecta el valor del url al parámetro ciudadId
         List<Vehiculos> vehiculos = vehiculosServicio.getPorPrefectura(ciudadId);
 
         if (vehiculos.isEmpty()) {
-            return ResponseEntity.noContent().build(); // 204
+            return ResponseEntity.noContent().build(); // Error 204
         }
 
-        return ResponseEntity.ok(vehiculos); // 200
+        return ResponseEntity.ok(vehiculos); //Error 200
     }
 
 
