@@ -17,12 +17,11 @@ import java.util.List;
 @Slf4j
 public class LugaresTurisiticosControlador {
 private final LugaresTurisiticosServicio lugaresTurisiticosServicio;
-    private final LugaresTurisiticosRepositorio lugaresTurisiticosRepositorio;
 
 
-    public LugaresTurisiticosControlador(LugaresTurisiticosServicio lugaresTurisiticosServicio, LugaresTurisiticosRepositorio lugaresTurisiticosRepositorio){
+
+    public LugaresTurisiticosControlador(LugaresTurisiticosServicio lugaresTurisiticosServicio){
         this.lugaresTurisiticosServicio = lugaresTurisiticosServicio;
-        this.lugaresTurisiticosRepositorio = lugaresTurisiticosRepositorio;
     }
 
 @GetMapping public ResponseEntity<List<LugaresTurisiticos>> getLugaresTuristicos(){ //METODO GET para devolver todos los lugares
