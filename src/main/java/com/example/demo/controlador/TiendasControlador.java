@@ -23,6 +23,14 @@ public class TiendasControlador {
     public ResponseEntity<Tiendas> mostrarTienda(@PathVariable long tiendaID){
         return new ResponseEntity<>(tiendasServicio.mostrarTienda(tiendaID),HttpStatus.OK);
     }
+    @GetMapping("{tiendaID}/ubicacion")
+    public ResponseEntity<String> mostrarUbicacion(@PathVariable long tiendaID){
+        return new ResponseEntity<>(tiendasServicio.mostrarUbicacion(tiendaID),HttpStatus.OK);
+    }
+    @GetMapping("ciudad/{ciudad}/tipo/{tipoTienda}")
+    public ResponseEntity<List<Tiendas>> mostrarTipoDeTiendaEnCiudad (@PathVariable String ciudad, @PathVariable String tipoTienda){
+        return new ResponseEntity<>(tiendasServicio.mostrarTipoDeTiendaEnCiudad(ciudad,tipoTienda),HttpStatus.OK);
+    }
     @PostMapping
     public ResponseEntity<String> guardarTienda(@RequestBody Tiendas tienda){
         tiendasServicio.guardarTiendas(tienda);

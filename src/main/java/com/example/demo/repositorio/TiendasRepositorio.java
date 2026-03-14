@@ -29,10 +29,24 @@ public class TiendasRepositorio {
     }
     public Tiendas actualizarTienda (long id, Tiendas tienda){
         tiendas.get(encontrarTienda(id)).setNombre(tienda.getNombre());
-        tiendas.get(encontrarTienda(id)).setDireccion(tienda.getDireccion());
+        tiendas.get(encontrarTienda(id)).setUbicacion(tienda.getUbicacion());
         tiendas.get(encontrarTienda(id)).setPresupuesto(tienda.getPresupuesto());
         tiendas.get(encontrarTienda(id)).setProductos(tienda.getProductos());
         return tienda;
+    }
+    public String mostrarUbiacion (long id){
+       return tiendas.get(encontrarTienda(id)).getUbicacion();
+    }
+    public List<Tiendas> mostrarTipoDeTiendaEnCiudad(String ciudad, String tipoTienda){
+        List<Tiendas> tiendasDelMismoTipo = new ArrayList<>();
+        for(int i=0; i<tiendas.size(); i++){
+            if(tiendas.get(i).getCiudad().equals(ciudad)){
+                if(tiendas.get(i).getTipoTienda().equals(tipoTienda)){
+                    tiendasDelMismoTipo.add(tiendas.get(i));
+                }
+            }
+        }
+        return tiendasDelMismoTipo;
     }
     private int encontrarTienda(long id) {
         for (int i = 0; i < tiendas.size(); i++) {

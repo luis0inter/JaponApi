@@ -1,19 +1,21 @@
 package com.example.demo.model;
 
-import com.example.demo.exception.DineroNegativo;
-
 import java.util.List;
 
 public class Tiendas {
     private Long ID_Tiendas;
     private String nombre;
-    private String direccion;
+    private String ubicacion;
     private double presupuesto;
     private List<Producto> productos;
+    private String ciudad;
+    private String tipoTienda;
 
-    public Tiendas (String nombre, String direccion, double presupuesto, List<Producto> productos){
+    public Tiendas (String nombre, String ubicacion, String ciudad, String tipoTienda, double presupuesto, List<Producto> productos){
         this.nombre = nombre;
-        this.direccion = direccion;
+        this.ubicacion = ubicacion;
+        this.ciudad = ciudad;
+        this.tipoTienda = tipoTienda;
         this.presupuesto = presupuesto;
         this.productos = productos;
     }
@@ -32,18 +34,15 @@ public class Tiendas {
         return productos;
     }
 
-    public String getDireccion() {
-        return direccion;
+    public String getUbicacion() {
+        return ubicacion;
     }
 
-    public void setDireccion(String direccion) {
-        this.direccion = direccion;
+    public void setUbicacion(String ubicacion) {
+        this.ubicacion = ubicacion;
     }
 
     public void setPresupuesto(double presupuesto) {
-        if(presupuesto<0){
-            throw new DineroNegativo("El presupuesto no debe ser negativo");
-        }
         this.presupuesto = presupuesto;
     }
 
@@ -57,5 +56,25 @@ public class Tiendas {
 
     public void setNombre(String nombre) {
         this.nombre = nombre;
+    }
+
+    public void setID_Tiendas(Long ID_Tiendas) {
+        this.ID_Tiendas = ID_Tiendas;
+    }
+
+    public String getTipoTienda() {
+        return tipoTienda;
+    }
+
+    public String getCiudad() {
+        return ciudad;
+    }
+
+    public void setTipoTienda(String tipoTienda) {
+        this.tipoTienda = tipoTienda;
+    }
+
+    public void setCiudad(String ciudad) {
+        this.ciudad = ciudad;
     }
 }
