@@ -25,4 +25,22 @@ public class LugaresTurisiticosRepositorio {
     public LugaresTurisiticos buscarLugarTuristico(int lugarTurisiticoId){
         return lugaresTuristicos.get(lugarTurisiticoId);
     }
+
+    public List<String> getActividades(int lugarTuristicoId){
+        return lugaresTuristicos.get(lugarTuristicoId).getActividades();
+    }
+
+    public String getUbicacion(int lugarTuristicoId){
+        return lugaresTuristicos.get(lugarTuristicoId).getUbicacion();
+    }
+
+    public List<String> getReviews(int lugarTuristicoId){
+        return lugaresTuristicos.get(lugarTuristicoId).getReviews();
+    }
+
+    public LugaresTurisiticos agregarReview( int lugarTuristicoId, String review){
+        lugaresTuristicos.get(lugarTuristicoId).getReviews().add(review);
+        return lugaresTuristicos.get(lugarTuristicoId);
+    }
+
 }
