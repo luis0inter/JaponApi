@@ -18,8 +18,6 @@ import java.util.List;
 public class LugaresTurisiticosControlador {
 private final LugaresTurisiticosServicio lugaresTurisiticosServicio;
 
-
-
     public LugaresTurisiticosControlador(LugaresTurisiticosServicio lugaresTurisiticosServicio){
         this.lugaresTurisiticosServicio = lugaresTurisiticosServicio;
     }

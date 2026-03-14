@@ -1,5 +1,8 @@
 package com.example.demo.servicio;
 
+import com.example.demo.exception.ActividadesVacias;
+import com.example.demo.exception.CampoVacio;
+import com.example.demo.exception.ReviewsVacias;
 import com.example.demo.model.LugaresTurisiticos;
 import com.example.demo.repositorio.LugaresTurisiticosRepositorio;
 import org.springframework.stereotype.Service;
@@ -19,6 +22,20 @@ public List<LugaresTurisiticos> getLugaresTuristicos(){
 }
 
 public LugaresTurisiticos guardarLugarTuristico(LugaresTurisiticos lugarTurisitico){
+    //Se valida si los valores de los atributos son vacíos para arrojar excepciones
+   boolean validActividades = lugarTurisitico.getActividades().isEmpty();
+   boolean validReviews = lugarTurisitico.getReviews().isEmpty();
+   boolean nombreVacio = lugarTurisitico.getNombre().isEmpty();
+   boolean ubicacionVacia = lugarTurisitico.getUbicacion().isEmpty();
+    if(validActividades){
+        throw new ActividadesVacias("La lista de actividades no debe estar vacía");
+    }
+    if (validReviews){
+        throw new ReviewsVacias("La lista de reviews no debe estar vacía");
+    }
+    if (nombreVacio || ubicacionVacia){
+        throw new CampoVacio("Ningun campo debe estar vacío");
+    }
     return lugaresTurisiticosRepositorio.guardarLugarTuristico(lugarTurisitico);
 }
 
