@@ -15,7 +15,7 @@ public class GlobalExceptionHandler {
         return new ResponseEntity<>(noEncontrado.getMessage(), HttpStatus.BAD_REQUEST);
     }
     public ResponseEntity<String> handleDineroNegativo (DineroNegativo dineroNegativo){
-        return new ResponseEntity<>("No se puede poner dinero negativo",HttpStatus.BAD_REQUEST);
+        return new ResponseEntity<>("No se puede poner precios negativos",HttpStatus.BAD_REQUEST);
     }
 
 

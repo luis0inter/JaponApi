@@ -1,7 +1,4 @@
 package com.example.demo.model;
-
-import com.example.demo.exception.DineroNegativo;
-
 public class Producto {
     private static long ID_producto;
     private String marca;
@@ -45,9 +42,6 @@ public class Producto {
     }
 
     public void setPrecio(Double precio) {
-        if(precio<0){
-            throw new DineroNegativo("El precio es negativo");
-        }
         this.precio = precio;
     }
 
