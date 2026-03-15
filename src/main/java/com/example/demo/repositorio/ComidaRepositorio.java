@@ -1,8 +1,6 @@
 package com.example.demo.repositorio;
 
 import com.example.demo.model.Comida;
-import lombok.AllArgsConstructor;
-import lombok.Data;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
