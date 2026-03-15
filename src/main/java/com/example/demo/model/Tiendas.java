@@ -6,12 +6,12 @@ public class Tiendas {
     private Long ID_Tiendas;
     private String nombre;
     private String ubicacion;
-    private double presupuesto;
+    private Double presupuesto;
     private List<Producto> productos;
     private String ciudad;
     private String tipoTienda;
 
-    public Tiendas (String nombre, String ubicacion, String ciudad, String tipoTienda, double presupuesto, List<Producto> productos){
+    public Tiendas (String nombre, String ubicacion, String ciudad, String tipoTienda, Double presupuesto, List<Producto> productos){
         this.nombre = nombre;
         this.ubicacion = ubicacion;
         this.ciudad = ciudad;
@@ -24,7 +24,7 @@ public class Tiendas {
         return ID_Tiendas;
     }
 
-    public double getPresupuesto() {return presupuesto;}
+    public Double getPresupuesto() {return presupuesto;}
 
     public void setID_Tiendas(long ID_Tiendas) {
         this.ID_Tiendas = ID_Tiendas;
